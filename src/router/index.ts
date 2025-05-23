@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+import isAuthenticatedGuard from '@/guards/is-authenticated.guard'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -17,6 +18,9 @@ const router = createRouter({
         {
           path: '/about',
           name: 'about',
+          beforeEnter:[
+            isAuthenticatedGuard,
+          ],
           component: () => import('../views/AboutView.vue'),
         },
         {

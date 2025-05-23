@@ -4,7 +4,11 @@ import { useRouter } from 'vue-router';
 const router = useRouter()
 function onLogin() {
     console.log('login');
-    router.replace('/')
+
+    localStorage.setItem('userId', 'ABC-123');
+    const lastPath = localStorage.getItem('lastPath') ?? '/'
+
+    router.replace(lastPath)
 
 }
 </script>
