@@ -16,7 +16,7 @@ const router = createRouter({
           component: HomeView,
         },
         {
-          path: '/about',
+          path: 'about',
           name: 'about',
           beforeEnter:[
             isAuthenticatedGuard,
